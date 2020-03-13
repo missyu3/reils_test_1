@@ -6,11 +6,10 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params.require(:contact).permit(:name,:email,:content)) 
-
     if @contact.save
-      redirect_to new_contact_path, notice:"お問い合わせありがとうございます！"
+      redirect_to new_contacts_path, notice:"お問い合わせありがとうございます！"
     else
-      render:new
+      render :new
     end
   end
 

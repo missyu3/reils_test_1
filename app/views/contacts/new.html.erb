@@ -1,13 +1,17 @@
 <h1>新規お問い合わせ画面</h1>
-<%= form_with(model: @contact, logal: true ) do |form| %>
+<%= form_with(model: @contact, local: true ) do |form| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @contact.errors.count %>件のエラーがあります。</h2>
+      <h2>
+        <%= @contact.errors.count %>件のエラーがあります。
+      </h2>
       <ul>
-      <% @contact.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ulr>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
   <div class="contact_title">
